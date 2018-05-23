@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "ProductHunt",
+  "author": "nativelocation",
+  "version": "1.0.0",
+  "description": "Automatically follow and unfollow on producthunt.",
+  "content_scripts": [
+    {
+      "matches": ["https://www.producthunt.com/*", "https://producthunt.com/*"],
+      "js" : ["content_script.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["background_script.js"],
+    "persistent": true
+  },
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "*://*.producthunt.com/*"
+  ]
+}
